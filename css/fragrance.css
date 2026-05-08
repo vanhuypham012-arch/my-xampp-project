@@ -1,0 +1,106 @@
+/* ===== RESET ===== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #000000;
+    color: #000;
+    padding-top: 100px;
+    /* Khoảng trống cho fixed header */
+}
+
+.fragrance-hero {
+    height: 40vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/banner_fragrance.jpg') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-bottom: 50px;
+}
+
+.fragrance-hero h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #c9a96e;
+}
+
+.fragrance-grid {
+    padding: 0 50px 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.card .img-container {
+    height: 400px;
+    background: #fff;
+}
+
+.card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+
+/* ===== CART SIDEBAR FOR FRAGRANCE ===== */
+
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    left: auto;
+    width: 350px;
+    height: 100vh;
+    background: #1a1a1a;
+    z-index: 2000;
+    transition: 0.4s;
+    padding: 30px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-sidebar.active {
+    right: 0;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.cart-items {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.cart-footer {
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.btn-buy {
+    width: 100%;
+    padding: 15px;
+    background: #c9a96e;
+    border: none;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}

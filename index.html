@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Fashion Club - Home</title>
+    <link rel="stylesheet" href="css/collection.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Playfair+Display&display=swap" rel="stylesheet">
+    <style>
+        /* 1. Phần kiểu dáng chung cho trang */
+        
+        .hero {
+            position: relative;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+        
+        .hero-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            filter: brightness(0.6);
+            transition: transform 2s ease;
+        }
+        
+        .hero:hover .hero-img {
+            transform: scale(1.1);
+        }
+        
+        .hero-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            letter-spacing: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .hero-text p {
+            font-size: 1.2rem;
+            letter-spacing: 5px;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+        /* 2. Phần danh sách sản phẩm nổi bật (Featured Products) */
+        
+        #featured {
+            padding: 50px;
+            text-align: center;
+            background: #eee;
+            color: #333;
+        }
+        
+        #featured h2 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 30px;
+        }
+        /* Lưới sản phẩm: tự động chia 4 cột, thu nhỏ trên điện thoại */
+        
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .card {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+            /* Hiệu ứng khi di chuột vào */
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            /* Nhảy nhẹ lên khi hover */
+        }
+        
+        .card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        
+        .btn-gold {
+            background: #c9a96e;
+            padding: 15px 30px;
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+        }
+        
+        .view-link {
+            color: #c9a96e;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+        }
+        /* 3. Chân trang */
+        
+        footer {
+            padding: 30px;
+            text-align: center;
+            background: #111;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-left">
+            <h1 class="logo" onclick="window.location.href='index.html'">FASHION<span>CLUB</span></h1>
+        </div>
+        <nav class="nav-center">
+            <div class="main-menu">
+                <a href="index.html" class="active">Home</a>
+                <a href="html/collection.html">Fashion</a>
+                <a href="html/makeup.html">Makeup</a>
+                <a href="html/watch.html">Watch</a>
+            </div>
+        </nav>
+        <div class="header-right">
+            <div class="notification-wrapper" onclick="toggleNotifications(event)">
+                <i class="fa-solid fa-bell"></i>
+                <span id="notification-count">0</span>
+                <div id="notification-dropdown" class="notification-dropdown">
+                    <div class="notification-header">Notifications</div>
+                    <div id="notification-list"></div>
+                </div>
+            </div>
+            <div class="cart-icon-wrapper" onclick="toggleCart()">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span id="cart-count">0</span>
+            </div>
+            <a href="#" class="auth-link"><i class="fa-solid fa-user"></i></a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <img src="img/banner.jpg" class="hero-img">
+        <div class="hero-text">
+            <h2>NEW ARRIVALS 2026</h2>
+            <p>DEFINE YOUR STYLE</p>
+            <a href="html/collection.html" class="btn btn-gold">Explore Collection</a>
+        </div>
+    </section>
+
+    <section id="featured">
+        <h2>Featured Products</h2>
+        <div class="products">
+            <!-- Dữ liệu mẫu tĩnh cho trang chủ -->
+            <div class="card">
+                <img src="img/q1.jpg" alt="Lisa Urban Brown Set">
+                <h3>Lisa Urban Brown Set</h3>
+                <p>$110.00</p>
+                <a href="html/collection.html" class="view-link">View in Shop</a>
+            </div>
+            <div class="card">
+                <img src="img/v5.jpg" alt="Jisoo Midnight Rose">
+                <h3>Jisoo Midnight Rose</h3>
+                <p>$350.00</p>
+                <a href="html/collection.html" class="view-link">View in Shop</a>
+            </div>
+            <div class="card">
+                <img src="img/w1.jpg" alt="Classic Chronograph">
+                <h3>Classic Chronograph</h3>
+                <p>$250.00</p>
+                <a href="html/collection.html" class="view-link">View in Shop</a>
+            </div>
+            <div class="card">
+                <img src="img/m1.jpg" alt="Silk Satin Lipstick">
+                <h3>Silk Satin Lipstick</h3>
+                <p>$45.00</p>
+                <a href="html/collection.html" class="view-link">View in Shop</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Fashion Club | Static Version</p>
+    </footer>
+
+    <!-- THÊM CART SIDEBAR CHO TRANG CHỦ -->
+    <div class="cart-overlay" onclick="toggleCart()"></div>
+    <section id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button onclick="toggleCart()" class="close-cart">&times;</button>
+        </div>
+        <div id="cart-items" class="cart-items"></div>
+        <div class="cart-footer">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+                <span>Total:</span>
+                <span>$<span id="cart-total">0</span></span>
+            </div>
+            <button class="btn-buy" onclick="location.href='html/collection.html'">Go to Shop</button>
+        </div>
+    </section>
+
+    <script>
+        // Logic giỏ hàng cho trang chủ
+        let cart = JSON.parse(localStorage.getItem("fashion_cart")) || [];
+
+        window.toggleCart = function() {
+            document.getElementById("cart-sidebar").classList.toggle("active");
+            document.querySelector(".cart-overlay").classList.toggle("active");
+        };
+
+        window.toggleNotifications = function(e) {
+            e.stopPropagation();
+            document.getElementById("notification-dropdown").classList.toggle("active");
+        };
+
+        // Đóng dropdown khi bấm ra ngoài
+        window.onclick = function() {
+            document.getElementById("notification-dropdown").classList.remove("active");
+        };
+
+        // Tải thông báo giả định từ dữ liệu mới nhất
+        function loadNotifications() {
+            fetch('manage_products.php')
+                .then(res => res.json())
+                .then(data => {
+                    const list = document.getElementById("notification-list");
+                    const count = document.getElementById("notification-count");
+                    const lowStock = data.filter(p => p.quantity > 0 && p.quantity < 10);
+                    const newArrivals = data.slice(0, 2);
+
+                    let html = "";
+                    lowStock.forEach(p => {
+                        html += `<div class="notification-item">⚠️ <b>Hurry!</b> Sản phẩm <b>${p.name}</b> chỉ còn ${p.quantity} món trong kho.</div>`;
+                    });
+                    newArrivals.forEach(p => {
+                        html += `<div class="notification-item">✨ <b>New Arrival:</b> Đã có <b>${p.name}</b> trong bộ sưu tập mới.</div>`;
+                    });
+
+                    if (!html) html = `<div class="notification-item" style="text-align:center;">Không có thông báo mới.</div>`;
+
+                    list.innerHTML = html;
+                    count.innerText = lowStock.length + newArrivals.length;
+                });
+        };
+
+        function updateCartUI() {
+            const container = document.getElementById("cart-items");
+            const countSpan = document.getElementById("cart-count");
+            const totalSpan = document.getElementById("cart-total");
+
+            let count = cart.reduce((sum, item) => sum + item.quantity, 0);
+            let total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+            if (countSpan) countSpan.innerText = count;
+            if (totalSpan) totalSpan.innerText = total;
+            localStorage.setItem("fashion_cart", JSON.stringify(cart));
+
+            if (container) {
+                container.innerHTML = cart.map(item => `
+                    <div class="cart-item" style="display: flex; gap: 10px; margin-bottom: 15px; align-items: center; color: white;">
+                        <img src="${item.img.replace('../', '')}" style="width: 50px; height: 50px; object-fit: cover;">
+                        <div style="flex: 1;">
+                            <h4 style="font-size: 14px; margin: 0;">${item.name}</h4>
+                            <p style="color: #c9a96e; margin: 0;">$${item.price} x ${item.quantity}</p>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        // Chạy ngay khi load trang
+        updateCartUI();
+        loadNotifications();
+    </script>
+</body>
+
+</html>

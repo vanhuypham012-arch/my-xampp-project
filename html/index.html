@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Club - Luxury Experience</title>
+    <link rel="stylesheet" href="../css/collection.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .hero {
+            position: relative;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../img/banner.jpg') center/cover;
+        }
+        
+        .hero-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 60px;
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .btn-explore {
+            padding: 15px 40px;
+            background: #c9a96e;
+            color: black;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+        
+        .btn-explore:hover {
+            background: white;
+        }
+        
+        .about {
+            padding: 100px 50px;
+            text-align: center;
+            background: white;
+            color: #1a1a1a;
+        }
+        
+        .about h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="header-left">
+            <h1 class="logo" onclick="window.location.href='index.html'">FASHION<span>CLUB</span></h1>
+        </div>
+        <nav class="nav-center">
+            <div class="main-menu">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="collection.html" class="nav-link">Fashion</a>
+                <a href="fragrance.html" class="nav-link">Fragrance</a>
+                <a href="makeup.html" class="nav-link">Makeup</a>
+                <a href="watch.html" class="nav-link">Watch</a>
+            </div>
+        </nav>
+        <div class="header-right">
+            <div class="cart-icon-wrapper" onclick="toggleCart()">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span id="cart-count">0</span>
+            </div>
+            <a href="#" class="auth-link" title="User Account"><i class="fa-solid fa-user"></i></a>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-text">
+            <h2>NEW COLLECTION 2026</h2>
+            <p>DEFINE YOUR STYLE</p>
+            <br><br>
+            <a href="collection.html" class="btn-explore">Explore Collection</a>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about">
+        <div class="about-text">
+            <h2>About Fashion Club</h2>
+            <p style="max-width: 800px; margin: 0 auto; line-height: 1.8; color: #666;">
+                Fashion Club is a modern fashion design brand that brings stylish and creative outfits for everyone. We redefine fashion with elegance and simplicity.
+            </p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer style="text-align: center; padding: 50px; background: #000; color: #555; font-size: 12px;">
+        <p>&copy; 2026 FASHION CLUB. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+    <script>
+        window.addEventListener("scroll", () => {
+            const header = document.querySelector(".header");
+            if (window.scrollY > 50) {
+                header.classList.add("scrolled");
+            } else {
+                header.classList.remove("scrolled");
+            }
+        });
+    </script>
+</body>
+
+</html>

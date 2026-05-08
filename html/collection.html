@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collection - Fashion Club</title>
+    <link rel="stylesheet" href="../css/collection.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-left">
+            <h1 class="logo" onclick="window.location.href='../index.html'">FASHION<span>CLUB</span></h1>
+        </div>
+        <nav class="nav-center">
+            <div class="main-menu">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="collection.html" class="nav-link active">Fashion</a>
+                <a href="makeup.html" class="nav-link">Makeup</a>
+                <a href="watch.html" class="nav-link">Watch</a>
+            </div>
+        </nav>
+        <div class="header-right">
+            <div class="notification-wrapper" onclick="toggleNotifications(event)">
+                <i class="fa-solid fa-bell"></i>
+                <span id="notification-count">0</span>
+                <div id="notification-dropdown" class="notification-dropdown">
+                    <div class="notification-header">Notifications</div>
+                    <div id="notification-list"></div>
+                </div>
+            </div>
+            <div class="cart-icon-wrapper" onclick="toggleCart()">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span id="cart-count">0</span>
+            </div>
+            <a href="#" class="auth-link"><i class="fa-solid fa-user"></i></a>
+        </div>
+    </header>
+
+    <!-- MAIN CONTAINER -->
+    <div class="container">
+        <!-- SIDEBAR FILTERS -->
+        <aside class="sidebar">
+            <h4>GENDER</h4>
+            <label><input type="checkbox" class="gender" value="men"> Men</label>
+            <label><input type="checkbox" class="gender" value="women"> Women</label>
+
+            <div class="category-box" style="display: none;">
+                <h4>CATEGORY</h4>
+                <label data-type="women"><input type="checkbox" class="category" value="dress"> Dress</label>
+                <label data-type="women"><input type="checkbox" class="category" value="tops"> Tops</label>
+                <label data-type="women"><input type="checkbox" class="category" value="pants"> Pants</label>
+                <label data-type="men"><input type="checkbox" class="category" value="jacket"> Jacket</label>
+                <label data-type="men"><input type="checkbox" class="category" value="pants"> Pants</label>
+                <label data-type="men"><input type="checkbox" class="category" value="tops"> Tops</label>
+            </div>
+        </aside>
+
+        <!-- PRODUCTS GRID -->
+        <main class="products">
+            <!-- Dữ liệu sẽ được load từ collection.js -->
+            <div class="loading-msg" style="color: #666; grid-column: 1/-1; text-align: center; padding: 50px;">
+                Loading luxury collection...
+            </div>
+        </main>
+    </div>
+
+    <!-- CART SIDEBAR -->
+    <div class="cart-overlay" onclick="toggleCart()"></div>
+    <section id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button onclick="toggleCart()" class="close-cart">&times;</button>
+        </div>
+
+        <div id="cart-items" class="cart-items">
+            <!-- Items load here -->
+        </div>
+
+        <div class="cart-footer">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+                <span>Total:</span>
+                <span>$<span id="cart-total">0</span></span>
+            </div>
+            <button class="btn-buy" onclick="checkout()">Checkout Now</button>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 50px; background: #000; color: #555; font-size: 12px; margin-top: 100px;">
+        <p>&copy; 2026 FASHION CLUB. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+    <script src="../js/collection.js"></script>
+</body>
+
+</html>

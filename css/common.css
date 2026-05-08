@@ -1,0 +1,24 @@
+/* reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* font */
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* header dùng chung */
+
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    padding: 20px 50px;
+}
