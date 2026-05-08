@@ -190,7 +190,7 @@ Nếu gặp lỗi, vui lòng:
 
 ## 👨‍💻 Tác Giả
 
-- **Tên:** Huỳnh Phan Văn
+- **Tên:** Phạm Văn Huy và Nguyễn Ngọc Như Nguyệt
 - **GitHub:** https://github.com/vanhuypham012-arch
 - **Repo:** https://github.com/vanhuypham012-arch/my-xampp-project
 
