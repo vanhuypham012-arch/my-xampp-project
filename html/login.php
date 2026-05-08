@@ -9,7 +9,7 @@ if (isset($_POST['login'])) {
     ✅ mysqli_stmt_bind_param($stmt, "s", $user);
     ✅ mysqli_stmt_execute($stmt);
     ✅ $result = mysqli_stmt_get_result($stmt);
-    $row = mysqli_fetch_assoc($res);
+    $row = mysqli_fetch_assoc($result);
     if ($row && password_verify($pass, $row['password'])) {
         $_SESSION['user_id'] = $row['id'];
         $_SESSION['role'] = $row['role'];
