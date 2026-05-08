@@ -4,7 +4,11 @@ session_start();
 if (isset($_POST['login'])) {
     $user = mysqli_real_escape_string($conn, $_POST['username']);
     $pass = $_POST['password'];
-    $res = mysqli_query($conn, "SELECT * FROM users WHERE username = '$user'");
+    ✅ $sql = "SELECT * FROM users WHERE username = ?";
+    ✅ $stmt = mysqli_prepare($conn, $sql);
+    ✅ mysqli_stmt_bind_param($stmt, "s", $user);
+    ✅ mysqli_stmt_execute($stmt);
+    ✅ $result = mysqli_stmt_get_result($stmt);
     $row = mysqli_fetch_assoc($res);
     if ($row && password_verify($pass, $row['password'])) {
         $_SESSION['user_id'] = $row['id'];
