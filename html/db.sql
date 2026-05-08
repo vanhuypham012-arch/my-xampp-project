@@ -46,10 +46,10 @@ CREATE TABLE IF NOT EXISTS order_details (
     FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- 6. Thêm tài khoản quản trị viên mặc định (Tên: admin | Mật khẩu: 123456)
+-- 6. Thêm tài khoản quản trị viên mặc định (Tên: admin | Mật khẩu: 123)
 REPLACE INTO users (username, password, role) VALUES ('admin', '$2y$10$7pXOL9jKCgGuYgXQJu/upO2TMtiAbqGEuPbcRZlHQEmtrHn4ZDnKG', 'admin');
 
--- 7. Thêm người dùng mẫu (Mật khẩu mặc định: 123456)
+-- 7. Thêm người dùng mẫu (Mật khẩu mặc định: 123)
 REPLACE INTO users (username, password, role) VALUES 
 ('khachhang1', '$2y$10$7pXOL9jKCgGuYgXQJu/upO2TMtiAbqGEuPbcRZlHQEmtrHn4ZDnKG', 'user'),
 ('khachhang2', '$2y$10$7pXOL9jKCgGuYgXQJu/upO2TMtiAbqGEuPbcRZlHQEmtrHn4ZDnKG', 'user');
